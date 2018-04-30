@@ -1,0 +1,51 @@
+Roee Landesman
+September 30th, 2017
+CS 203 - Cal Poly San Luis Obispo 
+Dr. Buckalew  
+------------------------------------------------------------------------------------------------
+*Entitykind is enum, meaning it can be accessed pretty easily from any class so ignored when choosing appropriate spot for method*
+
+Methods that were not moved: 
+- public static void executeQuakeActivity(Entity entity, WorldModel world,ImageStore imageStore, EventScheduler scheduler)
+	The method does not rely on either of the passed parameter's data (It is not neccessarily tied to a specific obj.), therefore I would keep this function as a static in the functions class. 
+
+-  public static void processImageLine(Map<String, List<PImage>> images, String line, PApplet screen)
+    All attribute calls in this method are referencing arrays created within the method and not the object passed in as parameters. Therefore I would keep this as a Utility method in the functions class. 
+
+- public static List<PImage> getImages(Map<String, List<PImage>> images, String key)
+	No calls to the passed in List, therefore would keep as static in functions class.
+
+- public static void load(Scanner in, WorldModel world, ImageStore imageStore)
+	I would not move this method anywheres and keep it as a static in the functions class because there are no attribute calls in this function 
+
+- public static int clamp(int value, int low, int high)
+	Purely dependant on primitive data types, no reason to refactor into an object. 
+
+-ScheduleActions? 
+	No clear class to put it in so why not keep static. 
+
+
+Multiple class methods: 
+- public static PImage getCurrentImage(Object entity)
+	Seeing as this method has two different functionalities depending on type of entity, I would split it between the 
+	Background and Entity objects (non-static)
+		>>> EDIT: This has to be kept as a static because it takes an Optional 
+
+- public static boolean isOccupied(WorldModel world, Point pos)
+	Could reasonably be put in either WorldModel or Point because function doesn't have attribute calls for either. I'd probably go with WorldModel because of context in terms of the functionality of said method. 
+
+- public static Optional<Entity> nearestEntity(List<Entity> entities, Point pos)
+	Same as above; Going with WorldModel because of contextual organization although argument could be made for putting function in Point class. 
+
+- public static void addEntity(WorldModel world, Entity entity)
+	Attribute calls for both entity and world, however the function is meant to change the WorldModel object so going ahead and putting this void function in that class 
+	
+- public static Optional<PImage> getBackgroundImage(WorldModel world, Point pos)
+	Could be kepy as a utlity static function but moving to the WorldModel class; This is not a simple accessor to an object but could benefit from using world's instance variables. 
+
+- public static boolean withinBounds(WorldModel world, Point pos)
+	Argument calls for both WorldModel and point; Will put in WorldModel because more abstract and applicable in regards to calls of this method within other functions. 
+	
+
+
+
