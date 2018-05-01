@@ -1,0 +1,20 @@
+														WORLD_EVENT Specification File
+													--------------------------------------
+Chris Buckalew - Computer Science 
+California Polytechnic State Unviersity - San Luis Obispo
+December 1st, 2017
+--------------------------------------
+Tasks: 
+1) Add a mouse-activated world modification to the simulation which spans no more than half the world and no less than 7 tiles. 
+2) Change the appearance and behavior of entities, based on their proximity to the modification specified in task 1. 
+3) Upon world modification (mouse-activated, per task 1), add a new Entity to the world. Behavior and appearance up to student discretion
+--------------------------------------
+Introduction/Preface: 
+For this project, I created a new entity named "Alon", which is meant to reflect the behavior of my roommate - Computer Engineering Student Alon Schwarz. The entity purposly eats ravioli (part of his essential diet), and has wild hair to resemble his free spirit.
+--------------------------------------
+Description:
+1) The event -- the creation of a rainbow on screen-- is activated by clicking on the PApplet screen with a mouse. 
+
+2/3) Upon activation, a rainbow with special properties will appear on the screen. It affects MinerNotFulls' by transforming them into evil miners, which have an identifiable pink axe and blue hair. These evil entities move faster than the original miners, and will attempt to "race" the unnaffected miners to consume all the ores on the map before the miners can. 
+
+3) For each naive miner that steps onto the rainbow, a devious alon spawns, which seaks out veins (as represented by pasta). The pathing strategy for alon is that of A* pathing, and is represented in appearance by my roommates face with rapidly changing colored hair. After eating 2 veins/pastas, the Alon entity becomes full and dissappears from the world. 
