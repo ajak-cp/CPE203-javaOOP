@@ -15,3 +15,6 @@ class BetterLoop
       return flag;  // A bit optimistic, but a real boolean value.
    }
 }
+
+//Testing new bash settings, ignore 
+
